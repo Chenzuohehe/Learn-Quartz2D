@@ -9,7 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-// sdhgsl hl 
+
 @end
 
 @implementation ViewController
@@ -22,6 +22,8 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+    NSLog(@"changgong ");
 }
 
 @end
