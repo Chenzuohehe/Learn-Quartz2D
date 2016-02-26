@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "quartz2D.h"
 
 @interface ViewController ()
 
@@ -17,15 +18,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    //uiview 和xib关联
+    quartz2D *qua =[[[NSBundle mainBundle] loadNibNamed:@"quartz2D" owner:self options:nil] lastObject];
+    qua.frame = CGRectMake(0, 0, 400, 400);
+    [self.view addSubview:qua];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
     
-    NSLog(@"changgong ");
-    //chengg
-    //shenmeguai hjskdl bva bhhla 
+    
 }
 
 @end

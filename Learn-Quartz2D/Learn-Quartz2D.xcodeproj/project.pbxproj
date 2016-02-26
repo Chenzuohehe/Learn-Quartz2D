@@ -15,6 +15,8 @@
 		04E0D1861C7EF9A7006355D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E0D1841C7EF9A7006355D2 /* LaunchScreen.storyboard */; };
 		04E0D1911C7EF9A7006355D2 /* Learn_Quartz2DTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0D1901C7EF9A7006355D2 /* Learn_Quartz2DTests.m */; };
 		04E0D19C1C7EF9A7006355D2 /* Learn_Quartz2DUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0D19B1C7EF9A7006355D2 /* Learn_Quartz2DUITests.m */; };
+		04E0D1B01C802BBC006355D2 /* quartz2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0D1AF1C802BBC006355D2 /* quartz2D.m */; };
+		04E0D1B21C802C43006355D2 /* quartz2D.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E0D1B11C802C43006355D2 /* quartz2D.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		04E0D1971C7EF9A7006355D2 /* Learn-Quartz2DUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Learn-Quartz2DUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E0D19B1C7EF9A7006355D2 /* Learn_Quartz2DUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Learn_Quartz2DUITests.m; sourceTree = "<group>"; };
 		04E0D19D1C7EF9A7006355D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04E0D1AE1C802BBC006355D2 /* quartz2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quartz2D.h; sourceTree = "<group>"; };
+		04E0D1AF1C802BBC006355D2 /* quartz2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = quartz2D.m; sourceTree = "<group>"; };
+		04E0D1B11C802C43006355D2 /* quartz2D.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = quartz2D.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +110,9 @@
 				04E0D17A1C7EF9A7006355D2 /* AppDelegate.m */,
 				04E0D17C1C7EF9A7006355D2 /* ViewController.h */,
 				04E0D17D1C7EF9A7006355D2 /* ViewController.m */,
+				04E0D1AE1C802BBC006355D2 /* quartz2D.h */,
+				04E0D1AF1C802BBC006355D2 /* quartz2D.m */,
+				04E0D1B11C802C43006355D2 /* quartz2D.xib */,
 				04E0D17F1C7EF9A7006355D2 /* Main.storyboard */,
 				04E0D1821C7EF9A7006355D2 /* Assets.xcassets */,
 				04E0D1841C7EF9A7006355D2 /* LaunchScreen.storyboard */,
@@ -245,6 +253,7 @@
 			files = (
 				04E0D1861C7EF9A7006355D2 /* LaunchScreen.storyboard in Resources */,
 				04E0D1831C7EF9A7006355D2 /* Assets.xcassets in Resources */,
+				04E0D1B21C802C43006355D2 /* quartz2D.xib in Resources */,
 				04E0D1811C7EF9A7006355D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +281,7 @@
 			files = (
 				04E0D17E1C7EF9A7006355D2 /* ViewController.m in Sources */,
 				04E0D17B1C7EF9A7006355D2 /* AppDelegate.m in Sources */,
+				04E0D1B01C802BBC006355D2 /* quartz2D.m in Sources */,
 				04E0D1781C7EF9A7006355D2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +508,7 @@
 				04E0D1A21C7EF9A7006355D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04E0D1A31C7EF9A7006355D2 /* Build configuration list for PBXNativeTarget "Learn-Quartz2DTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +517,7 @@
 				04E0D1A51C7EF9A7006355D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04E0D1A61C7EF9A7006355D2 /* Build configuration list for PBXNativeTarget "Learn-Quartz2DUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +526,7 @@
 				04E0D1A81C7EF9A7006355D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
