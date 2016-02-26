@@ -24,7 +24,8 @@
     // Dispose of any resources that can be recreated.
     
     NSLog(@"changgong ");
-    //chengg 
+    //chengg
+    //shenmeguai hjskdl bva bhhla 
 }
 
 @end
