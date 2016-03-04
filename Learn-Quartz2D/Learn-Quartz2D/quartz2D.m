@@ -39,13 +39,16 @@
 
 - (void)drawRect:(CGRect)rect {
     context = UIGraphicsGetCurrentContext();
-    [self drawLine];
-    [self drawLine2];
-    [self drawRef];
-    [self drawTriangle];
-    [self drawCircle];
-    [self drawString];
-    [self drawImage];
+//    [self drawLine];
+//    [self drawLine2];
+//    [self drawRef];
+//    [self drawTriangle];
+//    [self drawCircle];
+//    [self drawString];
+//    [self drawImage];
+//    [self drawBezier];
+    
+    [self drawPage];
 }
 
 - (void)drawLine
@@ -137,6 +140,42 @@
     //3.显示在View上
 //    CGContextStrokePath(context);
     CGContextFillPath(context);
+    
+    
+    // 2.画圆弧
+    CGContextRestoreGState(context);
+    CGContextSaveGState(context);
+    // x/y 圆心
+    // radius 半径
+    // startAngle 开始的弧度
+    // endAngle 结束的弧度
+    // clockwise 画圆弧的方向 (0 顺时针, 1 逆时针)
+    //    CGContextAddArc(context, 100, 100, 50, -M_PI_2, M_PI_2, 0);
+    CGContextAddArc(context, 200, 200, 50, M_PI_2, M_PI, 1);
+    CGContextClosePath(context);
+    [[UIColor redColor] set];
+    CGContextStrokePath(context);
+//    CGContextFillPath(context);
+    
+    // 2.画饼状图
+    CGContextRestoreGState(context);
+    CGContextSaveGState(context);
+    // 画线
+    CGContextMoveToPoint(context, 200, 200);
+    CGContextAddLineToPoint(context, 250, 250);
+//    CGContextSetLineWidth(context, 20);
+    CGContextSetRGBStrokeColor(context, 0.8, 0.8, 0.8, 1);
+    // 画圆弧
+    CGContextAddArc(context, 250, 250, 50, M_PI_2, M_PI, 0);
+//    //    CGContextAddArc(context, 100, 100, 50, -M_PI, M_PI_2, 1);
+//    
+//    // 关闭路径
+//    CGContextClosePath(context);
+    
+    
+    // 3.渲染 (注意, 画线只能通过空心来画)
+//    CGContextFillPath(context);
+    CGContextStrokePath(context);
 }
 
 - (void)drawString
@@ -163,4 +202,34 @@
     NSString *str = @"测试文本";
     [str drawInRect:CGRectMake(0, 0, 100, 30) withAttributes:nil];
 }
+
+- (void)drawBezier
+{
+    //1.获取图形上下文
+//    CGContextRestoreGState(context);
+//    CGContextSaveGState(context);
+    //起点
+    CGContextMoveToPoint(context, 210, 10);
+    //2个控制点
+    //CGContextAddCurveToPoint(context, 120, 100,   180, 50,  10, 190);
+    //                               第一个控制点，第二个控制点，   终点
+    
+    //1个控制点
+    CGContextAddQuadCurveToPoint(context, 150, 200, 200, 100);
+    
+    CGContextStrokePath(context);
+}
+
+- (void)drawPage
+{
+    CGContextMoveToPoint(context, 275, 367);
+    CGContextAddQuadCurveToPoint(context, 345, 337, 375 - 80, 375- 80);
+    CGContextAddQuadCurveToPoint(context, 375-15, 367 - 20, 375, 375 -100);
+    CGContextAddQuadCurveToPoint(context, 375, 367, 275, 367);
+//    [[UIColor blackColor] set];
+    CGContextStrokePath(context);
+    
+    
+}
+
 @end
