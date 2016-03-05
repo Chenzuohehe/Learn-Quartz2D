@@ -48,7 +48,9 @@
 //    [self drawImage];
 //    [self drawBezier];
     
-    [self drawPage];
+//    [self drawPage];
+//    [self drawArc];
+    [self drawSectorGraph];
 }
 
 - (void)drawLine
@@ -220,6 +222,7 @@
     CGContextStrokePath(context);
 }
 
+//模仿页码的边角 的贝塞尔曲线
 - (void)drawPage
 {
     CGContextMoveToPoint(context, 275, 367);
@@ -231,5 +234,54 @@
     
     
 }
+
+- (void)drawArc{
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextMoveToPoint(context, 85, 85);
+    
+    CGContextAddLineToPoint(context, 150, 150);
+    CGContextAddLineToPoint(context, 250, 50);
+    
+    CGContextSetRGBStrokeColor(context, 1, 0, 0, 1);
+    CGContextSetLineWidth(context, 10);
+    
+    CGContextSetLineJoin(context, kCGLineJoinRound);
+//    CGContextSetLineCap(context, kCGLineCapRound);
+   
+    CGContextDrawPath(context, kCGPathStroke);
+//    CGContextFillPath(context);
+}
+
+//画饼状图
+- (void)drawSectorGraph
+{
+    CGContextSaveGState(context);
+    CGContextAddEllipseInRect(context, CGRectMake(100, 100, 200, 200));
+    [[UIColor redColor] setFill];
+    CGContextFillPath(context);
+    
+    CGContextRestoreGState(context);
+    CGContextSaveGState(context);
+    CGContextMoveToPoint(context, 200, 200);
+    CGContextAddLineToPoint(context, 200, 100);
+//    CGContextSetLineWidth(context, 10);
+    
+    //弧线起点是最右
+    CGContextAddArc(context, 200, 200, 101, - M_PI_2, M_PI, 0);
+    CGContextClosePath(context);
+    
+    [[UIColor whiteColor] setFill];
+//    CGContextStrokePath(context);
+    CGContextFillPath(context);
+    
+    CGContextRestoreGState(context);
+    CGContextSaveGState(context);
+    CGContextAddEllipseInRect(context, CGRectMake(120, 120, 160, 160));
+    [[UIColor whiteColor] setFill];
+    CGContextFillPath(context);
+    
+}
+
 
 @end
