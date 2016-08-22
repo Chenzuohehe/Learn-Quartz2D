@@ -24,7 +24,7 @@
     qua.frame = CGRectMake(0, 0, 400, 400);
     [self.view addSubview:qua];
     
-    
+    //我是来捣蛋的
 }
 
 - (void)didReceiveMemoryWarning {
